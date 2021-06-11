@@ -34,7 +34,7 @@
 
   <div class="container">
     <h2>Get Your Message</h2>
-    <form action="./index.php" method="POST">
+    <form action="./index.php" method="GET">
       <div class="input-group">
         <div class="title">Input Your Key</div>
         <input name="openKey" type="text" placeholder="Your Key" />
@@ -54,8 +54,8 @@
       <?php
       include 'database.php';
 
-      if (isset($_POST['openKey'])) {
-        $key = $_POST['openKey'];
+      if (isset($_GET['openKey'])) {
+        $key = $_GET['openKey'];
         echo
           '
           <script>
