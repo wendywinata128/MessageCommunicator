@@ -50,11 +50,12 @@
     </div>
 
     <div class="messages">
-      <div class="key">#12324</div>
+
       <?php
       include 'database.php';
 
       if (isset($_POST['openKey'])) {
+        $key = $_POST['openKey'];
         echo
           '
           <script>
@@ -65,9 +66,12 @@
               container2.classList.toggle("open");
             })
           </script>
+          <div class="key">#' . $key . '</div>
           ';
 
-        $key = $_POST['openKey'];
+
+
+
 
         $query = mysqli_query($con, "SELECT * from message where `key` = $key") or die(mysqli_error($con));
 
