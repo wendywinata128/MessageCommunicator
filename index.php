@@ -73,7 +73,7 @@
 
 
 
-        $query = mysqli_query($con, "SELECT * from message where `key` = $key") or die(mysqli_error($con));
+        $query = mysqli_query($con, "SELECT * from message where `key` = '$key'") or die(mysqli_error($con));
 
         if (mysqli_num_rows($query) == 0) {
           echo
